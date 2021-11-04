@@ -1,6 +1,8 @@
 const express = require("express");
 const debug = require("debug")("index");
 const chalk = require("chalk");
+const morgan = require("morgan");
+const things = require("./routes/things");
 
 const app = express();
 
@@ -16,5 +18,9 @@ const initializeServer = (port) => {
     }
   });
 };
+
+app.use(express.json());
+app.use(morgan("dev"));
+app.use("/things", things);
 
 module.exports = initializeServer;
