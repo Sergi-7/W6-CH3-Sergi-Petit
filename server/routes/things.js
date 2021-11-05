@@ -41,6 +41,7 @@ router.post("/", async (req, res, next) => {
   try {
     const thing = req.body;
     const newThing = await Thing.create(thing);
+    console.log("agdadsgasdg");
     res.json(newThing);
   } catch (error) {
     error.code = 400;
@@ -48,4 +49,5 @@ router.post("/", async (req, res, next) => {
     next(error);
   }
 });
+
 module.exports = router;
