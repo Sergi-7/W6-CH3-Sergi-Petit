@@ -1,5 +1,5 @@
 const express = require("express");
-const debug = require("debug")("index");
+const debug = require("debug")("things:server");
 const chalk = require("chalk");
 const morgan = require("morgan");
 const things = require("./routes/things");
